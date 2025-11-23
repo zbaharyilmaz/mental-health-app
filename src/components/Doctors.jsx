@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { doctorData, counseleeData } from "../helper/data";
-import { useApp } from "../hooks/useApp";
+import { useAppContext } from "../context/AppContext";
 
 const Doctors = () => {
-  const { doctors, appointment, doctorClick } = useApp();
+  const { doctors, appointment, doctorClick } = useAppContext();
 
 
   return (

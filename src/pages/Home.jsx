@@ -2,10 +2,10 @@ import PatientList from "../components/PatientList";
 import AddPatient from "../components/AddPatient";
 import Header from "../components/Header";
 import Doctors from "../components/Doctors";
-import { useApp } from "../hooks/useApp";
+import { useAppContext } from "../context/AppContext";
 
 const Home = () => {
-  const { appointment } = useApp();
+  const { appointment } = useAppContext();
 
   return (
     <div>

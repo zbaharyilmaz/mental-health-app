@@ -1,6 +1,17 @@
 import { RiMentalHealthLine } from "react-icons/ri";
+import { useAppContext } from "../context/AppContext";
 
 const Header = () => {
+  const { patients, setPatients, handleSearch, search } = useAppContext();
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Form submit'i engelle
+  };
+
+  const handleSearchClick = (e) => {
+    e.preventDefault(); // Buton tıklamasında form submit'i engelle
+  };
+
   return (
     <div className="head container-fluid ">
       <div>
@@ -18,17 +29,21 @@ const Header = () => {
               </span>
               MEPHAS PSİKOLOJİ
             </h3>
-            <form className="d-flex" role="search">
+            <form className="d-flex" role="search" onSubmit={handleSubmit}>
               <input
+                onChange={handleSearch}
                 className="form-control me-2"
                 type="search"
-                placeholder="Search"
+                placeholder="Doktor ara..."
                 aria-label="Search"
+                name="search"
+                value={search}
               />
               <div className="my-auto me-2">
                 <button
                   className="btn btn-outline-dark rounded-4 "
                   type="submit"
+                  onClick={handleSearchClick}
                 >
                   Search
                 </button>
