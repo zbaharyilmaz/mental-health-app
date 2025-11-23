@@ -28,7 +28,7 @@ export const useApp = () => {
   const doctorClick = (id) => {
     const selectedDoctor = doctors.find((d) => d.id === id);
     if (selectedDoctor) {
-      setDoctors([selectedDoctor]);
+      setDoctors([selectedDoctor]);   // ! 2 setter varsa; hata olabiliyor. CLOSURE PROBLEMİNDEN ÖTÜRÜ; o yüzden assign ederek ilerle.     const selectedDoctor = doctors.find((d) => d.id === id); bu şekilde. aysnc old için sorun oluyor.
       setAppointment(false);
       setPatients(
         patients.filter((a) => a.myDoctor === selectedDoctor.doctorName)
@@ -51,7 +51,7 @@ export const useApp = () => {
 
   // Hasta ekleme
   const addPatient = (newPatient) => {
-    setPatients([...patients, newPatient]);
+    setPatients([...patients, newPatient]);    // [{},{},...... ] şeklindeydi.
   };
 
   // Hasta durumunu değiştir (isDone toggle)
