@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.153d5790.css",
+    "main.js": "/static/js/main.521cb7b4.js",
+    "static/media/image4.png": "/static/media/image4.6289acbe62dedad4e4f1.png",
+    "static/media/image6.png": "/static/media/image6.52426d8068aa6643387a.png",
+    "static/media/image1.png": "/static/media/image1.55a2ff2bb0ffe6223d8e.png",
+    "static/media/image3.png": "/static/media/image3.552846360e8629007249.png",
+    "static/media/image7.png": "/static/media/image7.3ef6a359f61230743f2d.png",
+    "static/media/image2.png": "/static/media/image2.71fdc9390180c73f94ae.png",
+    "static/media/image5.png": "/static/media/image5.fa5eca2e9dc0b5cf0c42.png",
+    "static/media/image_patient4.png": "/static/media/image_patient4.248766e036797cea846b.png",
+    "static/media/logo.png": "/static/media/logo.3b2cd399845608a12d3f.png",
+    "static/media/image_patient3.png": "/static/media/image_patient3.d6ddb7f93c909268de20.png",
+    "static/media/image_patient1.png": "/static/media/image_patient1.cc56f8f7231bd1a3767e.png",
+    "static/media/image_patient5.png": "/static/media/image_patient5.b87086491651eca7241a.png",
+    "static/media/image_patient2.png": "/static/media/image_patient2.9bff9b302947c21135b1.png",
+    "static/media/image_patient6.png": "/static/media/image_patient6.9326674edd93f4d77a71.png",
+    "index.html": "/index.html",
+    "main.153d5790.css.map": "/static/css/main.153d5790.css.map",
+    "main.521cb7b4.js.map": "/static/js/main.521cb7b4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.153d5790.css",
+    "static/js/main.521cb7b4.js"
+  ]
+}
