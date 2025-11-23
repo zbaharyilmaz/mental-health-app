@@ -12,10 +12,17 @@ export const useApp = () => {
     //*  Closure problemi: State güncellemesi asenkron olduğu için aynı fonksiyon içinde eski değeri görürsünüz. Çözüm: Event'ten gelen güncel değeri (e.target.value) bir değişkene alıp onu kullanın
 
     setSearch(searchValue);
-    const filteredDoctors = doctors.filter((item) =>
-      item.doctorName.toLowerCase().includes(searchValue.toLowerCase())
-    );
-    setDoctors(filteredDoctors);
+
+    // Boş arama ise tüm doktorları göster
+    if (searchValue === "") {
+      setDoctors(doctorData);
+    } else {
+      // DÜZELTME: doctorData kullan, doctors değil (doctors zaten filtrelenmiş olabilir)
+      const filteredDoctors = doctorData.filter((item) =>
+        item.doctorName.toLowerCase().includes(searchValue.toLowerCase())
+      );
+      setDoctors(filteredDoctors);
+    }
   };
   // Doktora tıklanması durumunda yapılacak işlem
   const doctorClick = (id) => {

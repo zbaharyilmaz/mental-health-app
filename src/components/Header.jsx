@@ -1,8 +1,13 @@
 import { RiMentalHealthLine } from "react-icons/ri";
+import { FaCopy, FaCheck, FaTag } from "react-icons/fa";
+import { useState } from "react";
 import { useAppContext } from "../context/AppContext";
+import logo from "../assets/images/logo.png";
 
 const Header = () => {
-  const { patients, setPatients, handleSearch, search } = useAppContext();
+  const { patients, setPatients, handleSearch, search, resetHome } =
+    useAppContext();
+  const [copied, setCopied] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault(); // Form submit'i engelle
@@ -12,23 +17,57 @@ const Header = () => {
     e.preventDefault(); // Buton tıklamasında form submit'i engelle
   };
 
+  const handleCopyCode = () => {
+    const code = "MEPHAS500";
+    navigator.clipboard.writeText(code);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <div className="head container-fluid ">
-      <div>
-        <p className=" fs-5 mt-1 text-center">
-          Daha iyi hissetme yolculuğunuzda ilk adımınıza özel <b>500 TL</b>{" "}
-          indirim kodu: <b>MEPHAS500</b>
-        </p>
+      <div className="promo-banner">
+        <div className="promo-content">
+          <FaTag className="promo-icon" />
+          <span className="promo-text">
+            Daha iyi hissetme yolculuğunuzda ilk adımınıza özel{" "}
+            <span className="discount-amount">500 TL</span> indirim kodu:
+          </span>
+          <div className="promo-code-container">
+            <span className="promo-code">MEPHAS500</span>
+            <button
+              className="copy-btn"
+              onClick={handleCopyCode}
+              title={copied ? "Kopyalandı!" : "Kodu Kopyala"}
+            >
+              {copied ? (
+                <FaCheck className="copy-icon" />
+              ) : (
+                <FaCopy className="copy-icon" />
+              )}
+            </button>
+          </div>
+        </div>
       </div>
       <div>
         <nav className="navbar bg-body-tertiary">
           <div className="container-fluid">
-            <h3 style={{ fontWeight: "700" }}>
-              <span className="fs-1 ms-5 p-3">
-                <RiMentalHealthLine />
-              </span>
-              MEPHAS PSİKOLOJİ
-            </h3>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "1rem",
+                cursor: "pointer",
+              }}
+              onClick={resetHome}
+            >
+              <img
+                src={logo}
+                alt="MEPHAS PSİKOLOJİ Logo"
+                style={{ height: "50px", width: "auto", borderRadius: "50%" }}
+              />
+              <h3 style={{ fontWeight: "700", margin: 0 }}>MEPHAS PSİKOLOJİ</h3>
+            </div>
             <form className="d-flex" role="search" onSubmit={handleSubmit}>
               <input
                 onChange={handleSearch}
@@ -57,3 +96,14 @@ const Header = () => {
 };
 
 export default Header;
+
+//! NOT
+
+// 1. Kullanıcı input'a "Aysa" yazar
+// 2. onChange tetiklenir → handleSearch çalışır
+// 3. searchValue = "Aysa" olur
+// 4. setSearch("Aysa") → search state'i güncellenir
+// 5. doctors.filter() → "Aysa" içeren doktorları bulur
+// 6. setDoctors(filteredDoctors) → Filtrelenmiş liste state'e kaydedilir
+// 7. Doctors component yeniden render olur
+// 8. Sadece "Aysa" içeren doktorlar gösterilir

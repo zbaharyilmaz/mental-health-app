@@ -30,6 +30,103 @@ body {
     rgba(255, 252, 247, 1) 88.6%
   );
 }
+/* Promo Banner - İndirim Kodu */
+.promo-banner {
+  background: linear-gradient(135deg, rgba(244, 208, 63, 0.15) 0%, rgba(22, 160, 133, 0.15) 100%);
+  border-bottom: 2px solid rgba(83, 156, 112, 0.3);
+  padding: 0.8rem 1rem;
+}
+
+.promo-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.promo-icon {
+  color: rgba(0, 56, 68, 1);
+  font-size: 1.3rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.promo-text {
+  color: rgba(0, 56, 68, 1);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.discount-amount {
+  color: #e74c3c;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.promo-code-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(83, 156, 112, 0.3);
+  transition: all 0.3s ease;
+}
+
+.promo-code-container:hover {
+  border-color: rgba(83, 156, 112, 0.6);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.promo-code {
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: rgba(0, 56, 68, 1);
+  letter-spacing: 1px;
+}
+
+.copy-btn {
+  background: rgba(83, 156, 112, 0.1);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: rgba(0, 56, 68, 1);
+}
+
+.copy-btn:hover {
+  background: rgba(83, 156, 112, 0.3);
+  transform: scale(1.1);
+}
+
+.copy-icon {
+  font-size: 0.9rem;
+}
+
+.copy-btn:active {
+  transform: scale(0.95);
+}
+
+/* Eski scroll animasyonu - artık kullanılmıyor */
 .head p {
   display: inline-block;
   white-space: nowrap;
@@ -189,6 +286,14 @@ body {
     font-size: 0.9rem;
   }
 
+  .navbar img {
+    height: 40px !important;
+  }
+
+  .navbar h3 {
+    font-size: 1.2rem;
+  }
+
   .dr img {
     width: 100%;
     height: auto;
@@ -245,7 +350,381 @@ body {
     font-size: 0.85rem;
   }
 
+  .navbar img {
+    height: 35px !important;
+  }
+
+  .navbar h3 {
+    font-size: 1rem;
+  }
+
   .head p {
     font-size: 0.9rem;
+  }
+
+  .promo-content {
+    flex-direction: column;
+    gap: 0.8rem;
+    text-align: center;
+  }
+
+  .promo-text {
+    font-size: 0.9rem;
+  }
+
+  .promo-code {
+    font-size: 1rem;
+  }
+
+  .promo-code-container {
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+/* ============================================
+   SECTION HEADER STİLLERİ
+   ============================================ */
+
+.section-header {
+  text-align: center;
+  margin: 3rem 0 2rem;
+  padding: 0 2rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: rgba(0, 56, 68, 1);
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, rgba(0, 56, 68, 1) 0%, rgb(83, 156, 112) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* ============================================
+   MODERN RANDEVU TAKVİMİ STİLLERİ
+   ============================================ */
+
+.appointments-container {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Bilgilendirme Banner */
+.appointment-info-banner {
+  background: linear-gradient(135deg, rgba(83, 156, 112, 0.1) 0%, rgba(142, 218, 172, 0.1) 100%);
+  border: 2px solid rgba(83, 156, 112, 0.3);
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.info-banner-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.info-banner-icon {
+  color: rgba(0, 56, 68, 1);
+  font-size: 1.5rem;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.info-banner-content > div {
+  flex: 1;
+}
+
+.info-banner-content strong {
+  color: rgba(0, 56, 68, 1);
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.info-banner-content ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  list-style: none;
+}
+
+.info-banner-content li {
+  color: #555;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+  position: relative;
+}
+
+.info-banner-content li::before {
+  content: "•";
+  color: rgba(0, 56, 68, 1);
+  font-weight: bold;
+  position: absolute;
+  left: -1rem;
+}
+
+.info-banner-content li strong {
+  color: rgba(0, 56, 68, 1);
+  display: inline;
+  font-weight: 600;
+}
+
+.appointments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.appointment-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  overflow: hidden;
+  border: 2px solid transparent;
+  position: relative;
+}
+
+.appointment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.appointment-card.pending {
+  border-left: 5px solid #f4d03f;
+}
+
+.appointment-card.completed {
+  border-left: 5px solid #16a085;
+  opacity: 0.85;
+}
+
+.appointment-card.completed:hover {
+  opacity: 1;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.status-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.status-badge .completed-icon {
+  color: #16a085;
+}
+
+.status-badge .pending-icon {
+  color: #f4d03f;
+}
+
+.status-badge span {
+  color: #333;
+}
+
+.appointment-card.completed .status-badge {
+  background: rgba(22, 160, 133, 0.1);
+}
+
+.appointment-card.pending .status-badge {
+  background: rgba(244, 208, 63, 0.15);
+}
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  color: #e74c3c;
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 0.3rem;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-btn:hover {
+  background: rgba(231, 76, 60, 0.1);
+  transform: scale(1.1);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.patient-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.info-icon {
+  color: rgba(0, 56, 68, 1);
+  font-size: 1.2rem;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.info-item > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  flex: 1;
+}
+
+.info-item .label {
+  font-size: 0.75rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.info-item .value {
+  font-size: 1rem;
+  color: rgba(0, 56, 68, 1);
+  font-weight: 500;
+}
+
+.card-footer {
+  padding: 0.8rem 1.5rem;
+  background: #f9f9f9;
+  border-top: 1px solid #e0e0e0;
+}
+
+.hint-text {
+  color: #999;
+  font-size: 0.75rem;
+  font-style: italic;
+}
+
+/* Empty State */
+.empty-appointments {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.empty-state {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 3rem;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.empty-icon {
+  font-size: 4rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.empty-state h3 {
+  color: rgba(0, 56, 68, 1);
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.empty-state p {
+  color: #666;
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .appointments-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .appointments-container {
+    padding: 1rem;
+  }
+
+  .appointment-info-banner {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .info-banner-content {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .info-banner-icon {
+    font-size: 1.3rem;
+  }
+
+  .appointment-card {
+    border-radius: 12px;
+  }
+
+  .card-header,
+  .card-body,
+  .card-footer {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .appointments-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-item {
+    gap: 0.8rem;
+  }
+
+  .info-icon {
+    font-size: 1rem;
+  }
+
+  .empty-state {
+    padding: 2rem 1rem;
+  }
+
+  .empty-icon {
+    font-size: 3rem;
   }
 }

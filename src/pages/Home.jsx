@@ -5,7 +5,7 @@ import Doctors from "../components/Doctors";
 import { useAppContext } from "../context/AppContext";
 
 const Home = () => {
-  const { appointment } = useAppContext();
+  const { appointment, doctors } = useAppContext();
 
   return (
     <div>
@@ -18,7 +18,16 @@ const Home = () => {
         </div>
         <div>{!appointment && <AddPatient />}</div>
       </div>
-      <h3 className="fs-2 fw-bold mt-5 text-center">Randevu Takvimi</h3>
+      <div className="section-header">
+        <h2 className="section-title">Randevu Takvimi</h2>
+        <p className="section-subtitle">
+          {appointment
+            ? "Bir doktor seçerek o doktora ait randevuları görüntüleyin"
+            : doctors.length > 0
+            ? `${doctors[0].doctorName} - Randevuları`
+            : "Seçilen doktora ait randevular"}
+        </p>
+      </div>
       <PatientList />
     </div>
   );
