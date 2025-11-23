@@ -1,11 +1,11 @@
 import { FaTimesCircle } from "react-icons/fa";
-
-const PatientList = ({ patients, setPatients }) => {
+import { useApp } from "../hooks/useApp";
+const PatientList = () => {
+  const { patients, deletePatient, setPatients } = useApp();
   return (
     <div>
       <div>
-        {patients.map((person) => {
-          const { id, patientName, day, isDone, myDoctor } = person;
+        {patients.map(({ id, patientName, day, isDone, myDoctor }) => {
           return (
             <div key={id} className="counselors">
               <div

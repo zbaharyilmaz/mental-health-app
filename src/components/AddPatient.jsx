@@ -1,6 +1,8 @@
 import { useState } from "react";
 import uuid from "react-uuid";
-const AddPatient = ({ doctors, setDoctors, patients, setPatients }) => {
+import { useApp } from "../hooks/useApp";
+const AddPatient = () => {
+  const { patients, addPatients, setPatients } = useApp();
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
   const [selectedDoctor, setSelectedDoctor] = useState("");

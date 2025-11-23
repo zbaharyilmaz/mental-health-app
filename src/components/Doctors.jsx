@@ -1,34 +1,15 @@
-const Doctors = ({
-  doctors,
-  setDoctors,
-  appointment,
-  patients,
-  setPatients,
-  setAppointment,
-}) => {
-  // Doktora tıklanması durumunda yapılacak işlem
-  const doctorClick = (id) => {
-    // Burada doktoru buluyoruz (doktorun id'si ile)
-    const selectedDoctor = doctors.find((d) => d.id === id);
+import { useState } from "react";
+import { doctorData, counseleeData } from "../helper/data";
+import { useApp } from "../hooks/useApp";
 
-    // Doktoru filtreliyoruz
-    setDoctors([selectedDoctor]);
+const Doctors = () => {
+  const { doctors, appointment, doctorClick } = useApp();
 
-    // appointment durumunu false yapıyoruz
-    setAppointment(false);
-
-    // Seçilen doktora bağlı olarak hastaları filtreliyoruz
-    // sadece tıklanan doktora ait hastaları filtreliyoruz
-    setPatients(
-      patients.filter((a) => a.myDoctor === selectedDoctor.doctorName)
-    );
-  };
 
   return (
     <div className="dr">
       {/*className={appointment ? "dr" : "dr-row"}  */}
-      {doctors.map((doc) => {
-        const { id, doctorImg, doctorName } = doc;
+      {doctors.map(({ id, doctorImg, doctorName }) => {
         return (
           <div key={id}>
             <img

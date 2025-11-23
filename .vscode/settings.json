@@ -1,0 +1,10 @@
+{
+  "typescript.validate.enable": false,
+  "javascript.validate.enable": false,
+  "typescript.check.npmIsInstalled": false,
+  "typescript.preferences.includePackageJsonAutoImports": "off",
+  "javascript.preferences.includePackageJsonAutoImports": "off",
+  "typescript.suggest.autoImports": false,
+  "javascript.suggest.autoImports": false
+}
+
